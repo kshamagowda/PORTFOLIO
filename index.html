@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kshamadharithri H P</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12141c;
+    --bg-raise: #1a1d29;
+    --text: #e9e9ee;
+    --text-dim: #9a9db0;
+    --accent: #d4a24c;
+    --line: #2a2e3d;
+    --font-head: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f7f5f0;
+      --bg-raise: #ffffff;
+      --text: #1b1c22;
+      --text-dim: #5b5d6b;
+      --accent: #a06a1f;
+      --line: #ded9cd;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f7f5f0;
+    --bg-raise: #ffffff;
+    --text: #1b1c22;
+    --text-dim: #5b5d6b;
+    --accent: #a06a1f;
+    --line: #ded9cd;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header.top {
+    position: sticky; top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; max-width: 760px; }
+  .brand { font-family: var(--font-mono); font-size: 14px; color: var(--text-dim); }
+  nav a { color: var(--text-dim); text-decoration: none; font-size: 14px; margin-left: 20px; }
+  nav a:hover { color: var(--accent); }
+
+  .hero { padding: 84px 0 56px; }
+  .hero p.eyebrow { font-family: var(--font-mono); color: var(--accent); font-size: 13px; margin: 0 0 14px; }
+  .hero h1 {
+    font-family: var(--font-head); font-weight: 700;
+    font-size: clamp(34px, 6vw, 54px); line-height: 1.08; margin: 0 0 18px; letter-spacing: -0.01em;
+  }
+  .hero .lede { font-size: 18px; color: var(--text-dim); max-width: 56ch; margin: 0 0 28px; }
+  .hero .meta { font-size: 14px; color: var(--text-dim); }
+  .hero .meta strong { color: var(--text); font-weight: 500; }
+
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  section h2 {
+    font-family: var(--font-head); font-weight: 700; font-size: 22px; margin: 0 0 18px;
+  }
+  .about p { max-width: 68ch; color: var(--text-dim); font-size: 16px; }
+  .about p strong { color: var(--text); font-weight: 500; }
+
+  .project { padding: 20px 0; border-top: 1px solid var(--line); }
+  .project:first-of-type { border-top: none; padding-top: 0; }
+  .project h3 { font-family: var(--font-head); font-size: 19px; margin: 0 0 6px; }
+  .project .stack { font-family: var(--font-mono); font-size: 12.5px; color: var(--accent); margin: 0 0 10px; }
+  .project p { color: var(--text-dim); font-size: 15px; margin: 0 0 10px; max-width: 62ch; }
+  .project ul { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: 15px; }
+  .project li { margin-bottom: 6px; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 32px; }
+  @media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
+  .skill-group h4 { font-family: var(--font-mono); font-size: 12.5px; color: var(--text-dim); font-weight: 500; margin: 0 0 8px; text-transform: none; }
+  .skill-group p { margin: 0; font-size: 15px; }
+
+  .contact .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .contact a.btn {
+    display: inline-block; padding: 10px 18px; border: 1px solid var(--line);
+    border-radius: 3px; color: var(--text); text-decoration: none; font-size: 14px;
+    transition: border-color .15s, color .15s;
+  }
+  .contact a.btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer { padding: 28px 0 40px; color: var(--text-dim); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="brand">kshama.dev</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" style="border-top:none;">
+    <p class="eyebrow">Information Science Engineering · Class of 2027</p>
+    <h1>Kshamadharithri H P</h1>
+    <p class="lede">I build AI-integrated applications and data-driven systems — from conversational agents to matching platforms — with a focus on clean, working code over polish for its own sake.</p>
+    <p class="meta">Based in <strong>Bengaluru, India</strong> · Open to Software Development &amp; Data Analyst roles</p>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I'm a final-year <strong>Information Science &amp; Engineering</strong> student at AMC Engineering College (CGPA 8.82/10), working at the intersection of software development and applied AI. My projects tend to start from a real, specific problem — remembering context across a chat session, matching two pieces of text — and get solved with the smallest tool that actually works: a JSON store, a TF-IDF vector, an API call.</p>
+    <p>I'm comfortable in <strong>Java, Python, and JavaScript</strong>, and spend most of my time in <strong>Node.js/Express</strong> on the backend and <strong>Pandas/NumPy</strong> when the problem is more about the data than the interface.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>AI Conversational Agent with Persistent Memory</h3>
+      <p class="stack">JavaScript · Node.js · Express · Groq API · JSON</p>
+      <ul>
+        <li>Built a conversational agent that keeps context across sessions, so replies stay personalized rather than resetting each time.</li>
+        <li>Designed a custom JSON-based memory store to save, update, and retrieve user data in real time.</li>
+        <li>Integrated the Groq LLM API and served it through a live chat interface on an Express/Node.js backend.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>AI-Driven Startup Collaboration &amp; B2B Service Platform</h3>
+      <p class="stack">Python · NLP · TF-IDF · Cosine Similarity</p>
+      <ul>
+        <li>Built a matching engine that connects startups with relevant collaborators and B2B service providers.</li>
+        <li>Used NLP to parse startup requirements and service descriptions for semantic comparison.</li>
+        <li>Applied TF-IDF vectorization and cosine similarity to rank and recommend the closest matches per profile.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group"><h4>Languages</h4><p>Java, Python, C, JavaScript, HTML, CSS</p></div>
+      <div class="skill-group"><h4>Core Concepts</h4><p>Data Structures &amp; Algorithms, OOP, DBMS, Statistics (basics)</p></div>
+      <div class="skill-group"><h4>Frameworks / Runtime</h4><p>Node.js, Express.js</p></div>
+      <div class="skill-group"><h4>Data &amp; AI</h4><p>Pandas, NumPy, Matplotlib, NLP, ML basics</p></div>
+      <div class="skill-group"><h4>APIs</h4><p>REST APIs, LLM API Integration (Groq)</p></div>
+      <div class="skill-group"><h4>Tools</h4><p>Git, GitHub, VS Code</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p style="color:var(--text-dim); margin:0 0 4px;">Happy to talk about internships, roles, or the projects above.</p>
+    <div class="links">
+      <a class="btn" href="mailto:kshamagowda567@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/kshamadharithri-h-p-ab2165329" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/kshamagowda/Kshama" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <footer>Kshamadharithri H P · Bengaluru, Karnataka</footer>
+</div>
+
+</body>
+</html>
