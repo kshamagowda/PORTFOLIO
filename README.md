@@ -87,7 +87,7 @@ A conversational AI application designed to maintain context across conversation
 - Developed a responsive real-time chat interface.
 - Integrated the backend with the Groq API for response generation.
 
-🔗 **Project:** Coming soon
+🔗 **Project:** [Live Demo](https://ai-conversational-agent-production.up.railway.app) | [GitHub](https://github.com/kshamagowda/ai-conversational-agent)
 
 ---
 
@@ -105,7 +105,7 @@ An AI-based matching platform designed to connect startups with relevant collabo
 - Implemented cosine similarity to calculate similarity between startup requirements and potential matches.
 - Ranked potential collaborators based on similarity scores.
 
-🔗 **Project:** Coming soon
+🔗 **Project:** [Live Demo](https://ai-conversational-agent-production.up.railway.app) | [GitHub](https://github.com/kshamagowda/ai-conversational-agent)
 
 ---
 
